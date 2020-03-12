@@ -323,3 +323,9 @@ function kralikCode(that){
 
 
 
+function getBlockOrder(block_name){
+	var previous_order = Qualtrics.SurveyEngine.getEmbeddedData("qOrder");
+	var actual_order = previous_order + block_name + ";";
+	alert(actual_order)
+	Qualtrics.SurveyEngine.getEmbeddedData("qOrder", actual_order);
+}
