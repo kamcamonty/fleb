@@ -321,9 +321,15 @@ function kralikCode(that){
 	maxInput(that, 9);
 }
 
-function getBlockOrder(block_name, epole, epole_name){
+//GET ORDER OF RANDMZED PARTS OF THE QUESTIONNAIRE
+	//item...name of item of interest (e.g.: block, question, can be any string which is not containing ; )
+	//epole...piped text for embedded field where results will be stored
+	//epole_name...name of embedded field where results will be stored
+
+
+function getBlockOrder(item, epole, epole_name){
 	var previous_order = epole;
-	var actual_order = previous_order + block_name + ";" ;
+	var actual_order = previous_order + item + ";" ;
 	alert(actual_order);
 	Qualtrics.SurveyEngine.setEmbeddedData(epole_name, actual_order);
 }
