@@ -330,6 +330,5 @@ function kralikCode(that){
 function getBlockOrder(item, epole, epole_name){
 	var previous_order = epole;
 	var actual_order = previous_order + item + ";" ;
-	alert(actual_order);
 	Qualtrics.SurveyEngine.setEmbeddedData(epole_name, actual_order);
 }
