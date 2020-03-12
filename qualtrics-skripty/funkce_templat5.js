@@ -321,9 +321,9 @@ function kralikCode(that){
 	maxInput(that, 9);
 }
 
-function getBlockOrder(block_name, epole){
+function getBlockOrder(block_name, epole, epole_name){
 	var previous_order = epole;
 	var actual_order = previous_order + block_name + ";" ;
 	alert(actual_order);
-	Qualtrics.SurveyEngine.setEmbeddedData("qOrder", actual_order);
+	Qualtrics.SurveyEngine.setEmbeddedData(epole_name, actual_order);
 }
