@@ -1,0 +1,140 @@
+/*Fonty */
+
+.invisible {
+	font-size: 0px;
+			}
+
+
+.note {
+	font-size: 11px;
+			}
+
+/* Mobilní optimalizace pro likertovy škály  matice */
+
+.R, .matrixR{
+  float:right;
+  font-weight: bold;
+  font-size:11pt;
+  text-align: center;
+  padding-right:10px;
+  padding-top:10px;
+  }
+		
+.L, .matrixL{
+  float:left;
+  font-weight: bold;
+  font-size:11pt;
+  text-align: center;
+  padding-left:10px;
+  padding-top:10px;
+  }
+
+.mR{
+  font-weight: bold;
+  font-size:11pt;
+  text-align: center;
+  display:none;
+  }
+		
+@media handheld, (max-width: 479px) {
+.mR{display: block;}
+.R{display: none;}
+.L{text-align: center;
+	float:none;
+	padding-bottom:0px;}}
+
+/* Nejen mobilní optimalizace pro likertovy škály v maticích*/
+ div.q-matrix.mobile.my-matrix label.single-answer.mobile{display:inline!important;}
+ div.q-matrix.mobile.my-matrix tr.ChoiceRow  td{text-align:center!important;}
+
+.mobileMatrixT, .mobileMatrixB {
+	font-weight:bold;
+	font-size:14.5px;
+	margin-left:2em;
+	}
+
+.JFEScope .Skin .Matrix .q-matrix.mobile table td {margin-left:3em;}
+
+/*Sliders*/
+.JFEScope .Skin .q-slider .statement-container {display: none; } /*There are no choices -> do not display free space reserved for them*/
+.sliderGrid.Slider .ylabel  {display: none; }
+.ResultsInput {width: 15px !important;}
+    
+
+	.Slabels {
+		padding-bottom: 7px;
+		text-align:left;
+		float:left;
+		max-width:80%;
+		}
+
+	.SlabelsR {
+		padding-bottom: 7px;
+		text-align:right;
+		float: right;
+		max-width:80%;
+        }
+        
+/* Třídy -  texty*/
+
+h1, h2 {padding-bottom: 20px;}
+
+.invisible {font-size: 0px;}  /* Neviditelný  text*/
+
+.Qintro{ /*Třída pro text úvodu, přpadně závěru - zarovnáno do bloku*/
+    font-size: 12pt;
+    font-weight: normal;
+    text-align: justify;
+    text-indent: 2em;}
+
+
+.QuestionText{ /* Qualtricsová třída pro text otázek. Takto budou textyvypadat, pokud nespecifikujeme něco jiného*/
+    font-weight: bold!important;
+    text-align: left;
+    font-size: 13pt;
+        }
+
+.Qdes{ /*Třída navržená pro doplňující informace k otázkám*/
+        font-weight: normal;
+        font-size:12pt;
+      }
+
+.Qimp { /*Třída navržená pro zvýrazění části textu otázek*/
+    color:blue;			
+}
+
+@media handheld, (max-width: 400px) { /* U telefonů budou texty o něco menší*/
+.QuestionText{font-size: 12pt;}
+.Qdes{font-size:11pt;}
+.Qintro{font-size:11pt;}
+      }
+
+
+/* Třídy -  obrázky*/
+
+.centerWrapper{
+    width: 100%;
+    text-align:center;
+};
+
+img.intro{};
+
+img.kralik{
+    width: 90%;
+    max-width:400px;}
+
+
+
+/*Všechny otázky*/
+.Questions{max-width:753px !important;} /*Oprava chyby v Qualtricsu (aby pod multiple-choice nebyly posuvníky)*/
+.QuestionBody{max-width:753px !important;} /*Oprava chyby v Qualtricsu (aby pod multiple-choice nebyly posuvníky)*/
+
+/*Text "Zajišťuje společnost Qualtrics"*/
+#Plug a{color:#000000!important;
+            font-size:0px!important;
+            visibility:hidden!important;}
+
+/*Tlačítka (hlavně Next)*/
+.Skin #Buttons{margin-top: 0px;}  /*Menší vzdálenost od těla poslední otázky*/
+
+@media handheld, (max-width: 500px) {.Skin #Buttons {text-align:center;}} /* U telefonů bude na středu*/

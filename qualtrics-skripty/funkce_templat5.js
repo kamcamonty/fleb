@@ -199,7 +199,7 @@ function mobileLab(that, inside) {
 //používá se funkce mobileMatrixW, ostatní jsou pomocné
 //argumenty
 //that..this
-//další dva - popisky škál, je nutné je mít i zde, pokus je brát z otázky se nevydařil, občas se nezobrzovaly
+//další dva - popisky škál, je nutné je mít i zde, pokus je brát z otázky se nevydařil, občas se nezobrazovaly
 
 function remove1(x) {
 	x = x.substring(x.indexOf('>') + 1, x.lastIndexOf('<'));
