@@ -354,12 +354,12 @@ function getBlockOrder(item, epole, epole_name){
 	//epole...plne zneni e. pole, do ktereho budu nahravat
 	//outname...nazev pole, do ktereho budu nahravat
 
-	function get_order(pole, epole){
-		var questionText  = pole + ";"; //vezme obsah pole (z Loop and Merge obsahuje id fotky) a prida za nej strednik
-		var out = epole + questionText; //predchozi promennou prida za "embedded" pole, kam budou postupně pribyvat vsechna id
-		 
-		var ename = epole.replace("${e:\/\/Field\/", "");
-				ename = ename.replace("}", "");
+	function get_order(ename){
+		var questionText  = "${lm://Field/1};"; //vezme obsah pole (z Loop and Merge obsahuje id fotky) a prida za nej strednik
+		var epole = Qualtrics.SurveyEngine.getEmbeddedData(ename);
+		
+		
+		var out = epole + questionText; //predchozi promennou prida za "embedded" pole, kam budou postupně pribyvat vsechna id		
 		  
 		  Qualtrics.SurveyEngine.setEmbeddedData(ename, out); //aktualizuje hodnotu e. pole
-																				  } 
+	} 
