@@ -354,10 +354,11 @@ function getBlockOrder(item, epole, epole_name){
 	//epole...plne zneni e. pole, do ktereho budu nahravat
 	//outname...nazev pole, do ktereho budu nahravat
 
-	function get_order(ename, questionText  = "${lm://Field/1};"){
+	function get_order(ename, id  = "${lm://Field/1}"){
 		var epole = Qualtrics.SurveyEngine.getEmbeddedData(ename);
 		
-		var out = epole + questionText; //predchozi promennou prida za "embedded" pole, kam budou postupně pribyvat vsechna id		
+		id = id + ";"
+		var out = epole + id; //predchozi promennou prida za "embedded" pole, kam budou postupně pribyvat vsechna id		
 		  alert(out)
 		  Qualtrics.SurveyEngine.setEmbeddedData(ename, out); //aktualizuje hodnotu e. pole
 	} 
