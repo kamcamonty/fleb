@@ -75,33 +75,6 @@
 		max-width:80%;
         }
         
-/* Třídy -  texty*/
-
-h1, h2 {padding-bottom: 20px;}
-
-.invisible {font-size: 0px;}  /* Neviditelný  text*/
-
-.Qintro{ /*Třída pro text úvodu, přpadně závěru - zarovnáno do bloku*/
-    font-size: 12pt;
-    font-weight: normal;
-    text-align: justify;
-    text-indent: 2em;}
-
-
-.QuestionText{ /* Qualtricsová třída pro text otázek. Takto budou textyvypadat, pokud nespecifikujeme něco jiného*/
-    font-weight: bold!important;
-    text-align: left;
-    font-size: 13pt;
-        }
-
-.Qdes{ /*Třída navržená pro doplňující informace k otázkám*/
-        font-weight: normal;
-        font-size:12pt;
-      }
-
-.Qimp { /*Třída navržená pro zvýrazění části textu otázek*/
-    color:blue;			
-}
 
 @media handheld, (max-width: 400px) { /* U telefonů budou texty o něco menší*/
 .QuestionText{font-size: 12pt;}
