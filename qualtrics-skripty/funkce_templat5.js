@@ -354,7 +354,7 @@ function getBlockOrder(item, epole, epole_name){
 	//epole...plne zneni e. pole, do ktereho budu nahravat
 	//outname...nazev pole, do ktereho budu nahravat
 
-	function get_order(ename, id  = "${lm://Field/1}"){
+	function get_order(ename, id){
 		var epole = Qualtrics.SurveyEngine.getEmbeddedData(ename);
 		
 		id = id + ";"
