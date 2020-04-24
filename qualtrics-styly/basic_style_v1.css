@@ -41,8 +41,11 @@
 .mobileMatrixT, .mobileMatrixB {
 	font-weight:bold;
 	font-size:14.5px;
-	margin-left:2em;
-	}
+  margin-left:2em;
+  }
+  
+.mobileMatrixT {margin-top:1em;}
+.mobileMatrixB {margin-bottom:1em;}
 
 .JFEScope .Skin .Matrix .q-matrix.mobile table td {margin-left:3em;}
 
