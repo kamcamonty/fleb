@@ -360,6 +360,6 @@ function getBlockOrder(item, epole, epole_name){
 		
 		
 		var out = epole + questionText; //predchozi promennou prida za "embedded" pole, kam budou postupně pribyvat vsechna id		
-		  
+		  alert(out)
 		  Qualtrics.SurveyEngine.setEmbeddedData(ename, out); //aktualizuje hodnotu e. pole
 	} 
