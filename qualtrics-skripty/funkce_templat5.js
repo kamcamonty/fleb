@@ -222,11 +222,12 @@ function indicateAnswer(Q) {
 
 function mobileMatrix(Q, textFirst, textLast) {
 
-	function addMobile(mobileTop, mobileBottom) {
 	var mobileTop = jQuery(Q + ' .mobileMatrixT');
 	var mobileBottom = jQuery(Q + ' .mobileMatrixB');
-	if (mobileTop.length == 0) { jQuery(Q + ' th').after('<div class = "mobileMatrixT">' + textFirst + '</div>'); }
-	if (mobileBottom.length == 0) { jQuery(Q + ' tr').append('<div  class = "mobileMatrixB">' + textLast + '</div>'); }
+
+	function addMobile() {
+	if (jQuery(Q + ' .mobileMatrixT').length == 0) { jQuery(Q + ' th').after('<div class = "mobileMatrixT">' + textFirst + '</div>'); }
+	if (jQuery(Q + ' .mobileMatrixB').length == 0) { jQuery(Q + ' tr').append('<div  class = "mobileMatrixB">' + textLast + '</div>'); }
 	}
 
 	mobileTop.remove();
@@ -270,7 +271,7 @@ function mobileMatrix(Q, textFirst, textLast) {
 	else {
 		jQuery('.single-answer br').replaceWith(' ');
 
-		addMobile(mobileTop, mobileBottom);
+		addMobile();
 
 		var choice_selector = Q + " tr.ChoiceRow  td label.single-answer.mobile";
 
@@ -280,7 +281,7 @@ function mobileMatrix(Q, textFirst, textLast) {
 		//var choiceRow = choices.parent("tr");
 		//console.log(choiceRow.first().html());
 
-		addMobile(mobileTop, mobileBottom);
+		addMobile();
 
 		var choice, temp;
 		for (i = 0; i < choices.length; i++) {
