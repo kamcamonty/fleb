@@ -351,14 +351,12 @@ function getBlockOrder(item, epole, epole_name){
 //Tato funkce v Loop a merge ulozi v e. poli texty zvoleneho Loop and Merge pole v poradi, v jakem byly hodnoeny
 	
 	//pole...pole v Loop and merge, jehoz hodnotu chci nahravat
-	//epole...plne zneni e. pole, do ktereho budu nahravat
-	//outname...nazev pole, do ktereho budu nahravat
-
+	//id...piped text s Loop and Merge polem, které (nejčasteji "${lm://Field/1}" )
+	//funkci je bohužel nutné zkopírovat k sobě do dotazníku, odsud nefunguje 
 	function get_order(ename, id){
 		var epole = Qualtrics.SurveyEngine.getEmbeddedData(ename);
 		
 		id = id + ";"
 		var out = epole + id; //predchozi promennou prida za "embedded" pole, kam budou postupně pribyvat vsechna id		
-		  alert(out)
 		  Qualtrics.SurveyEngine.setEmbeddedData(ename, out); //aktualizuje hodnotu e. pole
 	} 
