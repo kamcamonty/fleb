@@ -332,3 +332,34 @@ function getBlockOrder(item, epole, epole_name){
 	var actual_order = previous_order + item + ";" ;
 	Qualtrics.SurveyEngine.setEmbeddedData(epole_name, actual_order);
 }
+
+//LOOP AND MERGE
+	//MY_NEXT
+	//Tato funkce posle uzivatele na dalsi stranku, jakmile zaskrtne nejakou moznost u multiple choice otazky
+	function my_next(that){
+		that.hideNextButton(); //schova tlacitko next
+		that.hidePreviousButton(); //schova tlacitko previous
+		
+		that.questionclick = function(event, element) {
+			if(element.type == "radio") {that.clickNextButton();}
+			//Pokud nekdo klikne na moznost u multiple choice otazky ,
+			//POZOR, pokud by Vam to nefungovalo, ujistete se v inspektoru,ze jsou Vase moznosti HTML elementy typu radio; ruzne sablony to mohou mit ruzne
+																							}
+			}
+
+//GET_ORDER
+//Tato funkce v Loop a merge ulozi v e. poli texty zvoleneho Loop and Merge pole v poradi, v jakem byly hodnoeny
+	
+	//pole...pole v Loop and merge, jehoz hodnotu chci nahravat
+	//epole...plne zneni e. pole, do ktereho budu nahravat
+	//outname...nazev pole, do ktereho budu nahravat
+
+	function get_order(pole, epole){
+		var questionText  = pole + ";"; //vezme obsah pole (z Loop and Merge obsahuje id fotky) a prida za nej strednik
+		var out = epole + questionText; //predchozi promennou prida za "embedded" pole, kam budou postupně pribyvat vsechna id
+		 
+		var ename = epole.replace("${e:\/\/Field\/", "");
+				ename = ename.replace("}", "");
+		  
+		  Qualtrics.SurveyEngine.setEmbeddedData(ename, out); //aktualizuje hodnotu e. pole
+																				  } 
