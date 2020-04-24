@@ -360,3 +360,42 @@ function getBlockOrder(item, epole, epole_name){
 		var out = epole + id; //predchozi promennou prida za "embedded" pole, kam budou postupně pribyvat vsechna id		
 		  Qualtrics.SurveyEngine.setEmbeddedData(ename, out); //aktualizuje hodnotu e. pole
 	} 
+
+
+	//ZOBRAZIT NĚKTEROU Z DALŠÍCH
+		//Narozdíl od DisplayLogic, funguje i pro otázky na stejné stránce
+		//that...this
+		//ID...id schovávané otázky a druhé ID možností první otázky
+		//choiceID...id možností u první otázky, může jich být i víc, pak je třeba je tam uvést v tomto tvaru [x, y]
+
+		//POZOR, pro schování této otázky na začátku je nutné použít CSS styl a to 
+		//#QID15 {display:none;}
+		//#QID15Separator {display:none;}
+			//kde 15 je id
+	
+		function display_next (that, ID, choiceID){
+		var qid = "QID" + ID;
+		var sid = qid + "Separator";
+		var sep = document.getElementById(sid);
+		var nextQ = document.getElementById(qid);
+		
+		var selectedRecode;
+	    var condition;
+	
+	
+		that.questionclick = function(event, element) {
+			if(element.type == "radio")
+				{ selectedRecode = Number(that.getChoiceRecodeValue(that.getSelectedChoices()));
+				 
+				 if(Array.isArray(choiceID)){
+					 				condition = choiceID.includes(selectedRecode);}
+				 			else{condition = (selectedRecode == choiceID);}
+				 
+				 
+			 		if(condition) {nextQ.style.display = "block";
+								 sep.style.display = "block";}
+
+			 			else{nextQ.style.display = "none";
+						     sep.style.display = "none";}}}
+	
+		}	
